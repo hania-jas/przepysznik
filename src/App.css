@@ -1,241 +1,264 @@
 @font-face {
-  font-family: 'Korolev';
-  src: url(fonts/Korolev/Korolev.ttf);
+    font-family: 'Korolev';
+    src: url(fonts/Korolev/Korolev.ttf);
 }
 
 body {
-  width: 100%;
-  background-color: #ededee;
-  font-family: 'Korolev';
+    width: 100%;
+    background-color: #ededee;
+    font-family: 'Korolev';
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  height: 100px;
-  font-size: 40px;
-  margin: 0 100px;
-  padding: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    font-size: 40px;
+    margin: 0 100px;
+    padding: 0;
 }
 
 .navbar a {
-  color: #a05841;
+    color: #a05841;
 }
 
 .leftSide {
-  width: 50vw;
-  padding: 20px 0;
+    width: 50vw;
+    padding: 20px 0;
 }
 
 .rightSide {
-  padding: 20px 0;
-
+    padding: 20px 0;
 }
 
 .rightSide a {
-  margin: 0 10px;
+    margin: 0 10px;
 }
 
 .aboutContent {
-  padding: 250px 0;
-  display: flex;
-  background-color: #ededee;
-  width: 100%;
-  justify-content: center;
+    padding: 250px 0;
+    display: flex;
+    background-color: #ededee;
+    width: 100%;
+    justify-content: center;
 }
 
 .aboutText {
-  position: relative;
-  height: 100px;
-  width: auto;
+    position: relative;
+    height: 100px;
+    width: auto;
 }
 
 .carousel-inner {
-  background-color: black;
+    background-color: black;
 }
 
 .pic {
-  height: 1000px;
-  object-fit: cover;
-  opacity: 0.8;
+    height: 1000px;
+    object-fit: cover;
+    opacity: 0.8;
 }
 
 .cards {
-  height: 800px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  
+    height: 800px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .aboutPic {
-  height: 800px;
-  max-width: 800px;
-  min-width: 600px;
-  background-color: #fefefe;
-  margin: 10px 20px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    height: 800px;
+    max-width: 800px;
+    min-width: 600px;
+    background-color: #fefefe;
+    margin: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .aboutPic h2 {
-  font-size: 50px;
-  color: #a05841;
+    font-size: 50px;
+    color: #a05841;
 }
 
 .underscore {
-  font-size: 80px !important;
-  line-height: 60px;
-  position: relative;
-  bottom: 40px;
-  color: #a05841;
+    font-size: 80px !important;
+    line-height: 60px;
+    position: relative;
+    bottom: 40px;
+    color: #a05841;
 }
 
 .icon {
-  opacity: 0.9;
-  object-fit: contain;
-  max-width: 380px;
-  height: 420px;
+    opacity: 0.9;
+    object-fit: contain;
+    max-width: 380px;
+    height: 420px;
 }
 
 .buttonCardContainer {
- 
-  min-width: 600px;
-
+    min-width: 600px;
 }
 
-.cardButton {  
-
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  font-size: 30px;
-  width: 250px;
-  background-color: #a05841;
-  border: none;
-
+.cardButton {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    font-size: 30px;
+    width: 250px;
+    background-color: #a05841;
+    border: none;
 }
 
 .cardButton:hover {
-  background-color: #D0B0A6;
+    background-color: #D0B0A6;
 }
 
 .todaysContent {
-  box-sizing: border-box;
-  padding: 25px;
-  background-color: #ededee;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 25px 100px;
+    background-color: #ededee;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
+
 .todays {
-  width: 50%;
+    width: 50%;
+}
+
+.todaysDescript {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #a05841;
+}
+
+.todaysDescript h2 {
+    font-size: 50px;
+    position: relative;
+    bottom: 130px;
+}
+
+.aboutTodays {
+    font-size: 30px;
+    position: relative;
+    bottom: 70px;
+    text-align: center;
+}
+
+.secondUnderscore {
+    font-size: 90px;
+    position: relative;
+    bottom: 190px;
 }
 
 .todaysPic {
-  width: 100%;
-  object-fit: cover;
-  height: 800px;
-  box-sizing: border-box;
-  cursor: pointer;
-  
+    width: 100%;
+    object-fit: cover;
+    height: 800px;
+    box-sizing: border-box;
+    cursor: pointer;
 }
 
 .addYours:before {
-  content: '';
-  margin: 120px 0;
-  width: 100%;
-  height: 1800px;
-  position: absolute;
-  background-image: url('pictures/background.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.5;
+    content: '';
+    margin: 120px 0;
+    width: 100%;
+    height: 1800px;
+    position: absolute;
+    background-image: url('pictures/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
 }
 
 .addYours {
- display: flex;
-  justify-content: center;
-  align-self: center;
-  height: auto;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: auto;
 }
+
 .form {
-  box-sizing: border-box;
-  padding: 100px 160px;
-  width: 90%;
-  position: absolute;
-  height: 500px;
- 
+    box-sizing: border-box;
+    padding: 100px 160px;
+    width: 90%;
+    position: absolute;
+    height: 500px;
 }
 
 .form-label {
-  font-size: 40px;
+    font-size: 40px;
 }
 
 .form-control {
-  height: 60px;
-  font-size: 30px;
+    height: 60px;
+    font-size: 30px;
 }
 
 .btn {
-margin-top: 15px;
-padding: 15px;
-position: relative;
-left: 84%;
+    margin-top: 15px;
+    padding: 15px;
+    position: relative;
+    left: 84%;
 }
 
 .recipieContainer {
-  width: 100%;
-  display: flex;
-  position: relative;
-  top: 700px
+    width: 100%;
+    display: flex;
+    position: relative;
+    top: 700px
 }
 
 .card {
-  margin: 20px;
+    margin: 20px;
 }
 
 .col-lg-8 {
-  margin-left: 50px;
+    margin-left: 50px;
 }
+
 p {
-  margin-bottom: 0px; 
+    margin-bottom: 0px;
 }
 
 .deleteBtn {
- box-sizing: border-box;
- position: absolute;
- text-align: center !important;
- height: 40px;
- padding: 10px 20px;
- left: 220px;
- background-color: transparent;
- color: black;
- border: none !important;
+    box-sizing: border-box;
+    position: absolute;
+    text-align: center !important;
+    height: 40px;
+    padding: 10px 20px;
+    left: 220px;
+    background-color: transparent;
+    color: black;
+    border: none !important;
 }
 
 .carouselContainer {
-  margin: 0 100px;
+    margin: 0 100px;
 }
 
-.carousel-caption h3{
-  position: absolute;
-  font-size: 140px;
-  width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  text-align: center;
-  bottom: 400px;
+.carousel-caption h3 {
+    position: absolute;
+    font-size: 140px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 400px;
 }
 
 .logo {
-  width: 300px;
-  position: relative;
-  bottom: 300px;
-  left: 20%;
+    width: 300px;
+    position: relative;
+    bottom: 300px;
+    left: 20%;
 }

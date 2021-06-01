@@ -8,10 +8,6 @@ export const todaysDetails = [
     src: 'images/dinner.jpg'
   },
   {
-    description: 'Teatime',
-    src: 'images/teatime.jpg'
-  },
-  {
     description: 'Supper',
     src: 'images/supper.jpg'
   }
