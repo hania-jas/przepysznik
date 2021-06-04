@@ -6,12 +6,12 @@ const Navbar = () => {
   return (
     <nav className='navbar'>
       <div className='leftSide'>
-      <a href="#">PRZEPYSZNIK</a>
+      PRZEPYSZNIK
       </div>
       <div className='rightSide'>
-        <a href="#">RECIPIES</a>
-        <a href="#">TODAY'S</a>
-        <a href="#">ADD YOURS</a>
+        <a href="#recipies">RECIPIES</a>
+        <a href="#todays">TODAY'S</a>
+        <a href="#addRecipie">ADD YOURS</a>
       </div>
     </nav>
   )

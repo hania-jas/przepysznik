@@ -1,14 +1,14 @@
 export const todaysDetails = [
   {
-    description: 'Breakfast',
+    description: 'Summer Salad',
     src: 'images/breakfast.jpg'
   },
   {
-    description: 'Dinner',
+    description: 'Green Tacos',
     src: 'images/dinner.jpg'
   },
   {
-    description: 'Supper',
+    description: 'Basil cream sandwich',
     src: 'images/supper.jpg'
   }
 ]

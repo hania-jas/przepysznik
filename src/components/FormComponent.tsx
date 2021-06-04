@@ -1,9 +1,7 @@
 //@ts-nocheck
 import React, { useState } from 'react';
-import {Col, Row, Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
-import { propTypes } from 'react-bootstrap/esm/Image';
-import { splitBsProps } from 'react-bootstrap/lib/utils/bootstrapUtils';
 
 const FormComponent = ({addRecipie}) => {
 
@@ -22,9 +20,7 @@ const FormComponent = ({addRecipie}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
      splittedMethod = method.split("\n")
-     .map(i => {
-       return <p>{i}</p>})
-    console.log(splittedMethod);
+     console.log(splittedMethod);
      addRecipie(title, label, ingredients, splittedMethod);
      setTitle('');
     setIngredients('');
@@ -33,11 +29,10 @@ const FormComponent = ({addRecipie}) => {
 
   return (
   <Form className="form" onSubmit={handleSubmit}>
-    <Row>
-      <Col lg={3}>
+   
   <Form.Group controlId="exampleForm.ControlInput1">
     <Form.Label>Title</Form.Label>
-    <Form.Control value={title} type="input" onChange={e => setTitle(e.currentTarget.value)} placeholder="Enter title" />
+    <Form.Control value={title} type="input" onChange={e => setTitle(e.currentTarget.value)} placeholder="Enter title" required/>
     </Form.Group>
   <Form.Group controlId="exampleForm.ControlSelect2">
     <Form.Label>Select label</Form.Label>
@@ -48,18 +43,15 @@ const FormComponent = ({addRecipie}) => {
       <option>everything</option>
     </Form.Control>
   </Form.Group>
-  </Col>
-  <Col lg={8} className="secondFormCol">
   <Form.Group controlId="exampleForm.ControlTextarea1">
     <Form.Label>Ingredients</Form.Label>
-    <Form.Control as="textarea" rows={3}  value={ingredients} onChange={e => setIngredients(e.currentTarget.value)}/>
+    <Form.Control as="textarea" rows={3}  value={ingredients} onChange={e => setIngredients(e.currentTarget.value)} required/>
   </Form.Group>
   <Form.Group controlId="exampleForm.ControlTextarea1">
     <Form.Label>Method</Form.Label>
-    <Form.Control as="textarea" rows={3} value={method} onChange={e => formattedMethod(e.currentTarget.value)}/>
+    <Form.Control as="textarea" rows={3} value={method} onChange={e => formattedMethod(e.currentTarget.value)} placeholder="1. Do Something" required/>
   </Form.Group>
-  </Col>
-  </Row>
+
   <Button variant="outline-dark" className="button" type="submit">SUBMIT</Button>
 </Form>
   )

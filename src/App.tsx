@@ -25,7 +25,6 @@ function App() {
   };
 
   useEffect(() => {
-     //localStorage.removeItem("recipies")
     if (localStorage.getItem("recipies")) {
       setRecipie(JSON.parse(localStorage.getItem("recipies")));
     }
@@ -37,7 +36,7 @@ function App() {
     } else if (label === 'gluten free'){
       src = 'images/gluten.png';
     } else if (label === 'vegan') {
-      src = './images/vegan.png';
+      src = './images/vega.png';
     } else {
       src = './images/everything.png';
     }
@@ -53,6 +52,7 @@ function App() {
   const deleteRecipie = (id) => {
     let filteredRecipies = recipie.filter(recipie => recipie.id !== id)
     setRecipie(filteredRecipies);
+    saveData(filteredRecipies);
     console.log(recipie.id);
   }
 
@@ -77,14 +77,14 @@ function App() {
         )
       })}
       </Carousel>
-      <section className="aboutContent">
+      <section id="recipies" className="aboutContent">
         <div className="cards">
           {recipiesDetails.map((detail) => {
           return <RecipieCard {...detail}/>
         })}
         </div>
       </section>
-      <section className="todaysContent">
+      <section id="todays" className="todaysContent">
       <div className="todays todaysDescript">
         <h2>TODAYS INSPIRATION</h2>
         <p className="secondUnderscore">_</p>
@@ -97,7 +97,8 @@ function App() {
           return <TodaysCard {...detail} />
         })}
       </section>
-      <section className="addYours">
+      <section id="addRecipie" className="addYours">
+        <div className="createRecipie">CREATE YOUR OWN RECPIES!</div>
         <FormComponent addRecipie={addRecipie}/>
         <RecipiesList recipiesList={recipie} deleteRecipie={deleteRecipie}/>
       </section>
