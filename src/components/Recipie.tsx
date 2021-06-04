@@ -35,7 +35,7 @@ const ref = React.createRef();
           </div>
           </div>
           <div className="containerPdf">
-          <Pdf targetRef={ref} filename="code-example.pdf">
+          <Pdf targetRef={ref} filename="recipie.pdf">
           {({ toPdf }) => <button onClick={toPdf} className="generatePdf">Download PDF</button>}
           </Pdf>
           </div>

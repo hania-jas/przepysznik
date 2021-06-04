@@ -111,16 +111,49 @@ body {
 }
 
 .cardButton {
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 30px;
-    width: 250px;
     background-color: #a05841;
     border: none;
+    margin-top: 15px;
+    padding: 15px;
+    position: relative;
+    width: 200px;
 }
 
 .cardButton:hover {
     background-color: #D0B0A6;
+}
+.modal-open {
+    font-family: 'Philosopher';
+}
+
+.modal-header {
+    height: 400px;
+    text-transform: uppercase;
+}
+
+.modal-title {
+    font-size: 40px;
+}
+
+.modal-body {
+    height: 300px;
+}
+
+.modal-footer {
+   height: 150px;
+}
+
+.closeButton {
+    width: 160px;
+    font-size: 30px;
+    background-color: #84928e;
+}
+
+.close {
+    font-size: 50px;
 }
 
 .todaysContent {
@@ -250,13 +283,13 @@ body {
     width: 1000px;
 }
 
-.btn {
+.button {
+    left: 32%;
+    font-size: 30px;
     margin-top: 15px;
     padding: 15px;
     position: relative;
-    left: 30%;
     width: 200px;
-    font-size: 30px;
 }
 
 .recipieContainer {
@@ -273,6 +306,12 @@ body {
     width: 700px;
     font-family: 'Philosopher';
     padding: 20px;
+}
+
+.titleModalContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
 }
 .titleContainer {
     display: flex;
@@ -326,7 +365,9 @@ body {
     height: 60px;
     font-size: 25px;
     background-color: #acc3a7;
+    border: 2px solid #7f8b89;
     color: white;
+    font-weight: 500;
 }
 
 .generatePdf:hover {
