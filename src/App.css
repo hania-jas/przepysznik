@@ -4,8 +4,8 @@
 }
 
 @font-face {
-  font-family: 'Philosopher';
-  src: url(fonts/Philosopher-Regular.ttf);
+    font-family: 'Philosopher';
+    src: url(fonts/Philosopher-Regular.ttf);
 }
 
 body {
@@ -125,12 +125,12 @@ body {
     width: 200px;
 }
 
-
 .cardButton:hover {
     background-color: #D0B0A6;
     color: white;
     text-decoration: none;
 }
+
 .modal-open {
     font-family: 'Philosopher';
 }
@@ -149,7 +149,7 @@ body {
 }
 
 .modal-footer {
-   height: 150px;
+    height: 150px;
 }
 
 .closeButton {
@@ -255,7 +255,7 @@ body {
 .createRecipie {
     font-size: 100px;
     width: 550px;
-   left: 300px;
+    left: 300px;
     font-weight: 600;
     padding-top: 80px;
     height: 300px;
@@ -317,21 +317,25 @@ body {
 .titleModalContainer {
     display: flex;
     justify-content: space-between;
-    width: 100%; 
+    width: 100%;
 }
+
 .titleContainer {
     display: flex;
     justify-content: space-between;
 }
+
 .titleHeader {
     padding: 50px;
     width: 50%;
     height: auto;
 }
+
 .titleHeader h2 {
     text-transform: uppercase;
     font-size: 40px;
 }
+
 .recipieLabelContainer {
     width: 300px;
     height: 300px;
@@ -339,10 +343,9 @@ body {
     background-color: #acc3a7;
     display: flex;
     flex-direction: column;
-    justify-content: center;  
-    align-items :center;
+    justify-content: center;
+    align-items: center;
     margin: 20px;
-    
 }
 
 .badgeIngContainer {
@@ -351,15 +354,14 @@ body {
 
 .badgeIngredient {
     font-size: 30px;
-    
 }
 
 .recipieLabel {
     object-fit: contain;
     max-width: 90%;
     max-height: 90%;
-    
 }
+
 .containerPdf {
     display: flex;
     justify-content: end;
@@ -377,7 +379,7 @@ body {
 }
 
 .generatePdf:hover {
-background-color: #81908a;
+    background-color: #81908a;
 }
 
 .badgeLabel {
@@ -385,12 +387,13 @@ background-color: #81908a;
     margin: 10px;
     background-color: #84928e;
 }
+
 .methodContainer {
     padding: 20px;
 }
 
 .method {
-    font-size:35px;
+    font-size: 35px;
 }
 
 .col-lg-8 {
@@ -440,4 +443,23 @@ p {
     position: relative;
     bottom: 300px;
     left: 20%;
+}
+
+.recipieWebsite:before {
+    content: '';
+    margin: 120px 0;
+    width: 100%;
+    height: 5000px;
+    position: absolute;
+    background-image: url('pictures/background-n.png');
+    background-repeat: repeat;
+    background-size: 1000px;
+    opacity: 0.5;
+}
+
+.recipieWebsite {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: auto;
 }
