@@ -111,19 +111,25 @@ body {
 }
 
 .cardButton {
-    left: 50%;
-    transform: translateX(-50%);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
     font-size: 30px;
     background-color: #a05841;
     border: none;
     margin-top: 15px;
     padding: 15px;
     position: relative;
+    display: block;
     width: 200px;
 }
 
+
 .cardButton:hover {
     background-color: #D0B0A6;
+    color: white;
+    text-decoration: none;
 }
 .modal-open {
     font-family: 'Philosopher';
