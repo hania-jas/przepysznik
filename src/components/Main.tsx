@@ -5,7 +5,7 @@ import Sugarfree from './Sugarfree';
 import RecipieCard from './RecipieCard';
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
-import data from '../data.json';
+import data from '../data/myRecipies.json';
 import { recipiesDetails } from '../recipiesDetails';
 import { todaysDetails } from '../todaysDetails';
 import TodaysCard from './TodaysCard';
