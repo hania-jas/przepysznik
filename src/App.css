@@ -354,6 +354,7 @@ body {
 
 .badgeIngredient {
     font-size: 30px;
+    overflow-wrap: break-word;
 }
 
 .recipieLabel {
