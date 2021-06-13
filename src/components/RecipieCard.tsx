@@ -14,7 +14,7 @@ return (
           <h2>{description}</h2>
           <p className="underscore">_</p>
           <div className="buttonCardContainer">
-          <Link to={path} className="cardButton">SEE RECIPIES</Link>
+          <Link to={path} className="cardButton">see recipies</Link>
           </div>
           <img src={src} alt="" className="icon"/>
         </div>

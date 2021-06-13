@@ -21,7 +21,8 @@ return (
   <>
         <div className="todays todaysDarken" onClick={handleShow}>
           <img src={src} alt="" className="todaysPic"/>
-          <div class="recipieTitle">{title}</div>
+          <div class="recipieTitle">
+            <p>{title}</p></div>
         </div>
 
         <Modal show={show} onHide={handleClose} centered size="lg" className="modal">

@@ -18,7 +18,7 @@ body {
     display: flex;
     justify-content: space-between;
     height: 100px;
-    font-size: 40px;
+    font-size: 30px;
     margin: 0 100px;
     padding: 0;
 }
@@ -42,7 +42,7 @@ body {
 }
 
 .aboutContent {
-    padding: 250px 0;
+    padding: 40px 100px;
     display: flex;
     background-color: #ededee;
     width: 100%;
@@ -60,13 +60,13 @@ body {
 }
 
 .pic {
-    height: 1000px;
+    height: 600px;
     object-fit: cover;
     opacity: 0.8;
 }
 
 .cards {
-    height: 800px;
+    /* height: 600px; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -74,9 +74,8 @@ body {
 }
 
 .aboutPic {
-    height: 800px;
-    max-width: 800px;
-    min-width: 600px;
+    height: 530px;
+    width: 350px;
     background-color: #fefefe;
     margin: 10px 20px;
     border-radius: 5px;
@@ -87,12 +86,13 @@ body {
 }
 
 .aboutPic h2 {
-    font-size: 50px;
+    font-size: 40px;
     color: #a05841;
+    margin-top: 60px;
 }
 
 .underscore {
-    font-size: 80px !important;
+    font-size: 60px;
     line-height: 60px;
     position: relative;
     bottom: 40px;
@@ -102,27 +102,28 @@ body {
 .icon {
     opacity: 0.9;
     object-fit: contain;
-    max-width: 380px;
+    max-width: 260px;
     height: 420px;
 }
 
 .buttonCardContainer {
     min-width: 600px;
+
 }
 
 .cardButton {
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
+    height: 50px;
     background-color: #a05841;
     border: none;
-    margin-top: 15px;
-    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
     position: relative;
-    display: block;
-    width: 200px;
+    width: 150px;
 }
 
 .cardButton:hover {
@@ -136,30 +137,26 @@ body {
 }
 
 .modal-header {
-    height: 400px;
+    height: 170px;
     text-transform: uppercase;
 }
 
 .modal-title {
-    font-size: 40px;
-}
-
-.modal-body {
-    height: 300px;
+    font-size: 20px;
 }
 
 .modal-footer {
-    height: 150px;
+    height: 130px;
 }
 
 .closeButton {
     width: 160px;
-    font-size: 30px;
+    font-size: 20px;
     background-color: #84928e;
 }
 
 .close {
-    font-size: 50px;
+    font-size: 20px;
 }
 
 .todaysContent {
@@ -181,11 +178,15 @@ body {
 }
 
 .recipieTitle {
-    font-size: 60px;
+    font-size: 40px;
     position: relative;
-    bottom: 400px;
+    bottom: 250px;
     text-align: center;
-    margin-bottom: -90px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -80px;
     color: transparent;
     font-family: 'Philosopher';
 }
@@ -206,29 +207,29 @@ body {
 }
 
 .todaysDescript h2 {
-    font-size: 50px;
+    font-size: 20px;
     position: relative;
-    bottom: 50px;
+    margin-bottom: 0;
 }
 
 .aboutTodays {
-    font-size: 35px;
+    font-size: 20px;
     position: relative;
-    bottom: 70px;
+    bottom: 40px;
     text-align: center;
     padding: 0 40px;
 }
 
 .secondUnderscore {
-    font-size: 90px;
+    font-size: 50px;
     position: relative;
-    bottom: 120px;
+    bottom: 40px;
 }
 
 .todaysPic {
     width: 100%;
     object-fit: cover;
-    height: 800px;
+    height: 400px;
     box-sizing: border-box;
     cursor: pointer;
 }
@@ -241,7 +242,7 @@ body {
     position: absolute;
     background-image: url('pictures/background-n.png');
     background-repeat: repeat;
-    background-size: 1000px;
+    background-size: 500px;
     opacity: 0.5;
 }
 
@@ -253,9 +254,9 @@ body {
 }
 
 .createRecipie {
-    font-size: 100px;
-    width: 550px;
-    left: 300px;
+    font-size: 40px;
+    width: 400px;
+    left: 100px;
     font-weight: 600;
     padding-top: 80px;
     height: 300px;
@@ -266,7 +267,7 @@ body {
 
 .form {
     margin: 140px;
-    height: 1100px;
+    height: 700px;
     box-sizing: border-box;
     width: 40%;
     position: absolute;
@@ -280,22 +281,21 @@ body {
 }
 
 .form-label {
-    font-size: 40px;
+    font-size: 20px;
 }
 
 .form-control {
-    height: 80px;
-    font-size: 30px;
-    width: 1000px;
+    height: 50px;
+    font-size: 18px;
+    width: 600px;
 }
 
 .button {
     left: 32%;
-    font-size: 30px;
+    font-size: 15px;
     margin-top: 15px;
-    padding: 15px;
     position: relative;
-    width: 200px;
+    width: 120px;
 }
 
 .recipieContainer {
@@ -304,48 +304,53 @@ body {
     flex-wrap: wrap;
     position: relative;
     justify-content: center;
-    top: 1400px
+    top: 1000px
 }
 
 .card {
     margin: 20px;
-    width: 700px;
+    min-width: 450px;
     font-family: 'Philosopher';
     padding: 20px;
+}
+
+.modal-content {
+    width: 700px;
 }
 
 .titleModalContainer {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    height: 150px
 }
 
 .titleContainer {
     display: flex;
     justify-content: space-between;
+    height: 90px;
 }
 
 .titleHeader {
-    padding: 50px;
+    padding: 15px;
     width: 50%;
     height: auto;
 }
 
 .titleHeader h2 {
     text-transform: uppercase;
-    font-size: 40px;
+    font-size: 20px;
 }
 
 .recipieLabelContainer {
-    width: 300px;
-    height: 300px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     background-color: #acc3a7;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px;
 }
 
 .badgeIngContainer {
@@ -353,7 +358,7 @@ body {
 }
 
 .badgeIngredient {
-    font-size: 30px;
+    font-size: 17px;
     overflow-wrap: break-word;
 }
 
@@ -370,9 +375,9 @@ body {
 }
 
 .generatePdf {
-    width: 180px;
-    height: 60px;
-    font-size: 25px;
+    width: 120px;
+    height: 40px;
+    font-size: 16px;
     background-color: #acc3a7;
     border: 2px solid #7f8b89;
     color: white;
@@ -384,7 +389,7 @@ body {
 }
 
 .badgeLabel {
-    font-size: 30px;
+    font-size: 17px;
     margin: 10px;
     background-color: #84928e;
 }
@@ -394,7 +399,7 @@ body {
 }
 
 .method {
-    font-size: 35px;
+    font-size: 17px;
 }
 
 .col-lg-8 {
@@ -427,23 +432,16 @@ p {
     margin: 0 100px;
 }
 
-.carousel-caption h3 {
-    position: absolute;
-    font-size: 140px;
-    width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
-    bottom: 400px;
+.carousel-caption {
+    display: flex;
+    justify-content: center;
 }
 
 .logo {
-    width: 300px;
+    width: 700px;
     position: relative;
-    bottom: 300px;
-    left: 20%;
+    bottom: 150px;
+    
 }
 
 .recipieWebsite:before {
@@ -465,6 +463,233 @@ p {
     height: auto;
 }
 
-.toPDF {
-    page-break-inside: auto;
+@media (max-width: 1760px) {
+.aboutPic {
+    height: 400px;
+    width: 300px;
+}
+.cardButton {
+    text-align: center;
+    font-size: 16px;
+    height: 30px;
+    width: 80px;
+    bottom: 18px;
+}
+.aboutPic h2 {
+    font-size: 35px;
+    color: #a05841;
+}
+.underscore {
+    font-size: 28px
+}
+.icon {
+    max-width: 200px;
+    height: 350px;
+}
+.createRecipie {
+    width: 250px;
+}
+
+}
+
+@media (max-width: 1560px) {
+
+    .aboutPic {
+        height: 400px;
+        width: 500px;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: center;
+        align-items:unset;
+        flex-wrap: wrap;
+    }
+    .icon {
+        max-width: 300px;
+        height: 300px;
+    }
+    .cardButton {
+        left: 150px;
+        background-color: transparent;
+        color: #a05841;
+        font-size: 20px;
+        height: 40px;
+        width: 120px;
+        top: 210px;
+    }
+    .aboutPic h2 {
+        margin-top: 60px;
+    }
+
+    .buttonCardContainer {
+        margin-bottom: -80px;
+    }
+    .underscore {
+       display: none;
+    }
+
+    .cardButton:hover {
+        background-color: #a05841;
+        border-radius: 20px;
+    }
+
+    .form {
+        width: 50%;
+    }
+}
+
+    @media (max-width: 1280px) {
+        .aboutPic {
+            height: 400px;
+            width: 400px;
+        }
+        .cardButton {
+            left: 130px;
+            width: 100px;
+        }
+        .todaysDescript h2 {
+            font-size: 20px;
+           margin-top: 10px;
+        }
+
+        .aboutTodays {
+            font-size: 15px;
+        }
+
+        .recipieTitle p {
+            font-size: 20px;
+        }
+
+        .createRecipie {
+            font-size: 20px;
+        }
+
+        .form {
+            padding: 0;
+            width: 50%;
+            height: 600px;
+
+        }
+        .form-label {
+            font-size: 16px;
+        }
+        
+        .form-control {
+            height: 40px;
+            font-size: 16px;
+            width: 500px;
+        }
+
+        .recipieContainer {
+            top: 800px
+        }
+
+        @media (max-width: 1080px) {
+            .aboutPic {
+                height: 400px;
+                width: 370px;
+            }
+
+            .navbar {
+                font-size: 20px;
+                margin: 0 20px;
+            }
+            .carouselContainer {
+                margin: 0;
+            }
+
+            .aboutContent {
+                padding: 40px 0px;
+            }
+            .aboutPic h2 {
+               margin-top: 10px;
+               margin-bottom: 20px;
+            }
+
+            .todaysContent {
+                padding: 25px 0px;
+            }
+            .form {
+                width: 70%;
+    
+            }
+
+            .logo {
+                width: 500px;
+            }
+           
+        }
+
+        @media (max-width: 735px) {
+            .leftSide {
+                width: 100vw;
+                padding-top: 10px;
+                padding-bottom: 0px;
+            }
+            
+            .rightSide {
+                padding: 10px 0;
+                width: 100vw;
+                align-self: flex-end;
+            }
+            .rightSide  {
+                margin-right: 10px;
+                margin-left: 0;
+                display: flex;
+                justify-content: flex-end;
+          }
+
+          .pic {
+            height: 400px;
+        }
+
+        .logo {
+            bottom: 80px;
+        }
+
+        .todays {
+            width: 100%;
+        }
+        
+        .todaysDescript {
+            height: 400px;
+        }
+
+        .form {
+            width: 100%;
+        }
+        
+        }
+
+        @media (max-width: 525px) {
+
+    .logo {
+        width: 300px;
+        bottom: 70px;
+    }
+    .pic {
+        height: 300px;
+    }
+    .createRecipie {
+        width: 300px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .form-label {
+        font-size: 18px;
+    }
+    
+    .form-control {
+        height: 40px;
+        font-size: 16px;
+        width: 90vw;
+    }
+}
+
+    @media (max-width: 460px) { 
+        .card {
+            min-width: 340px;
+        }
+    }
 }

@@ -12,7 +12,7 @@ import TodaysCard from './TodaysCard';
 import FormComponent from './FormComponent';
 import RecipiesList from './RecipiesList';
 import { carouselDetails } from '../carouselDetails';
-import logo from '../pictures/logo.png';
+import projekt from '../pictures/projekt.png';
 
 
 
@@ -71,8 +71,8 @@ const Main = () => {
               alt=''
             />
             <Carousel.Caption>
-              <h3>PRZEPYSZNIK</h3>
-              <img src={logo} alt="" className="logo"/>
+              {/* <h3>PRZEPYSZNIK</h3> */}
+              <img src={projekt} alt="" className="logo"/>
             </Carousel.Caption>
           </Carousel.Item>
         )
@@ -99,7 +99,9 @@ const Main = () => {
         })}
       </section>
       <section id="addRecipie" className="addYours">
+        <div className="centeringContainer">
         <div className="createRecipie">CREATE YOUR OWN RECPIES!</div>
+        </div>
         <FormComponent addRecipie={addRecipie}/>
         <RecipiesList recipiesList={recipie} deleteRecipie={deleteRecipie}/>
       </section>

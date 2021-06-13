@@ -22,9 +22,6 @@ const print = () => {
       doc.save();
     }
  });
-  // console.log(pdf);
-  // pdf.html(string);
-  // pdf.save("pdf");
 };
 
   return (
