@@ -26,7 +26,10 @@ const ref = React.createRef();
         </div>
         <div ref={ref}>
           <div className="badgeIngContainer">
-          <Badge variant="light" className="badgeIngredient">{recipie.ingredients}</Badge>
+            {recipie.ingredients.map(ingredient => {
+              return  <Badge variant="light" className="badgeIngredient">{ingredient}</Badge>
+            })}
+         
           </div>
           <div className="methodContainer">
           {recipie.method.map(method => {

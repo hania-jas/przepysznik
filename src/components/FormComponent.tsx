@@ -10,7 +10,7 @@ const FormComponent = ({addRecipie}) => {
   const [ingredients, setIngredients] = useState('');
   const [method, setMethod] = useState('');
   let splittedMethod;
-  let arrayOfVals;
+  let splittedIngredients;
 
   const formattedMethod = method => {
       setMethod(method.replace(/[a-z]\.$/, (method[method.length-2] + '.' + '\n')));    
@@ -20,8 +20,9 @@ const FormComponent = ({addRecipie}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
      splittedMethod = method.split("\n")
+     splittedIngredients = ingredients.split(" ")
      console.log(splittedMethod);
-     addRecipie(title, label, ingredients, splittedMethod);
+     addRecipie(title, label, splittedIngredients, splittedMethod);
      setTitle('');
     setIngredients('');
     setMethod('');

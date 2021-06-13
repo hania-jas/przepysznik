@@ -2,11 +2,30 @@
 import React from 'react';
 import Badge from 'react-bootstrap/Badge';
 import Pdf from "react-to-pdf";
-import * as htmlToImage from 'html-to-image';
+import ToPDF from './ToPDF';
+import { renderToString } from "react-dom/server";
+import { jsPDF } from "jspdf";
+
+import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
 
 const Subpage = ({id, title, src, ingredients, method}) => {
-const ref = React.createRef();
 
+const print = () => {
+  const string = renderToString( <ToPDF method={method} ingredients={ingredients}/>);
+  const pdf = new jsPDF();
+
+  pdf.html(string, {
+    callback: function (doc) {
+      doc.setFont('Times New Roman')
+     doc.setFontSize(10);
+      console.log(doc.getFontSize());
+      doc.save();
+    }
+ });
+  // console.log(pdf);
+  // pdf.html(string);
+  // pdf.save("pdf");
+};
 
   return (
     <div className="card" key={id}>
@@ -18,20 +37,9 @@ const ref = React.createRef();
           <img className="recipieLabel" src={src} alt=""/>
           </div>
         </section>
-        <div ref={ref}>
-          <div className="badgeIngContainer">
-          <Badge variant="light" className="badgeIngredient">{ingredients}</Badge>
-          </div>
-          <div className="methodContainer">
-          {method.map(method => {
-          return <p className="method">{method}</p>
-          })}
-          </div>
-          </div>
+       <ToPDF method={method} ingredients={ingredients}/>
           <div className="containerPdf">
-          <Pdf targetRef={ref} filename="recipie.pdf">
-          {({ toPdf }) => <button onClick={toPdf} className="generatePdf">Download PDF</button>}
-          </Pdf>
+          <button onClick={print} className="generatePdf">Download PDF</button>
           </div>
     </div>
   )

@@ -25,6 +25,7 @@ const Main = () => {
   };
 
   useEffect(() => {
+    //localStorage.removeItem("recipies");
     if (localStorage.getItem("recipies")) {
       setRecipie(JSON.parse(localStorage.getItem("recipies")));
     }
