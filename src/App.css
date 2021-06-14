@@ -309,7 +309,8 @@ body {
 
 .card {
     margin: 20px;
-    min-width: 450px;
+    min-width: 350px;
+    max-width: 500px;
     font-family: 'Philosopher';
     padding: 20px;
 }
@@ -328,7 +329,7 @@ body {
 .titleContainer {
     display: flex;
     justify-content: space-between;
-    height: 90px;
+    height: 120px;
 }
 
 .titleHeader {
@@ -355,11 +356,15 @@ body {
 
 .badgeIngContainer {
     margin: 10px;
+    width: 100%;
+    word-break: break-all;
 }
 
 .badgeIngredient {
+    word-wrap:break-word;
     font-size: 17px;
-    overflow-wrap: break-word;
+    white-space: normal;
+    text-align: left;
 }
 
 .recipieLabel {
@@ -458,6 +463,7 @@ p {
 
 .recipieWebsite {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-self: center;
     height: auto;

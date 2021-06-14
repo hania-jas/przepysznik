@@ -25,7 +25,7 @@ const print = () => {
 };
 
   return (
-    <div className="card" key={id}>
+    <div className="card subCard" key={id}>
        <section className="titleContainer">
          <div className="titleHeader">
        <h2>{title}</h2>
