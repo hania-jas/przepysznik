@@ -5,8 +5,8 @@ import SubpageCard from './SubpageCard';
 const Vegan = () => {
   return (
     <div className="recipieWebsite">
-       {vegan.map((recipie) => {
-        return <SubpageCard src={recipie.src} id={recipie.id} title={recipie.title} method={recipie.method} ingredients={recipie.ingredients}/>
+      {vegan.map((recipie) => {
+        return <SubpageCard src={recipie.src} id={recipie.id} title={recipie.title} method={recipie.method} ingredients={recipie.ingredients} />
       })}
     </div>
   )

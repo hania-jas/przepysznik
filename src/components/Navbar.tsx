@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <nav className='navbar'>
       <div className='leftSide'>
-      PRZEPYSZNIK
+        PRZEPYSZNIK
       </div>
       <div className='rightSide'>
         <a href="#recipies">RECIPIES</a>

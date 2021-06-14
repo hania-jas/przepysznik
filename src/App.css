@@ -66,7 +66,6 @@ body {
 }
 
 .cards {
-    /* height: 600px; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -108,7 +107,6 @@ body {
 
 .buttonCardContainer {
     min-width: 600px;
-
 }
 
 .cardButton {
@@ -327,6 +325,8 @@ body {
 }
 
 .titleContainer {
+    position: relative;
+    bottom: 20px;
     display: flex;
     justify-content: space-between;
     height: 120px;
@@ -361,7 +361,7 @@ body {
 }
 
 .badgeIngredient {
-    word-wrap:break-word;
+    word-wrap: break-word;
     font-size: 17px;
     white-space: normal;
     text-align: left;
@@ -417,15 +417,14 @@ p {
 
 .deleteBtn {
     box-sizing: border-box;
-    position: absolute;
-    text-align: center !important;
+    display: flex;
+    align-self: end;
+    text-align: center;
     height: 40px;
-    padding: 10px 20px;
-    left: 560px;
-    width: 150px;
+    padding: 0;
     background-color: transparent;
     color: black;
-    border: none !important;
+    border: none;
 }
 
 .deleteBtn:hover {
@@ -446,7 +445,6 @@ p {
     width: 700px;
     position: relative;
     bottom: 150px;
-    
 }
 
 .recipieWebsite:before {
@@ -457,7 +455,7 @@ p {
     position: absolute;
     background-image: url('pictures/background-n.png');
     background-repeat: repeat;
-    background-size: 1000px;
+    background-size: 500px;
     opacity: 0.5;
 }
 
@@ -469,46 +467,48 @@ p {
     height: auto;
 }
 
-@media (max-width: 1760px) {
-.aboutPic {
-    height: 400px;
-    width: 300px;
-}
-.cardButton {
-    text-align: center;
-    font-size: 16px;
-    height: 30px;
-    width: 80px;
-    bottom: 18px;
-}
-.aboutPic h2 {
-    font-size: 35px;
-    color: #a05841;
-}
-.underscore {
-    font-size: 28px
-}
-.icon {
-    max-width: 200px;
-    height: 350px;
-}
-.createRecipie {
-    width: 250px;
+.subTitle {
+    position: unset;
+    bottom: 0;
 }
 
+@media (max-width: 1760px) {
+    .aboutPic {
+        height: 400px;
+        width: 300px;
+    }
+    .cardButton {
+        text-align: center;
+        font-size: 16px;
+        height: 30px;
+        width: 80px;
+        bottom: 18px;
+    }
+    .aboutPic h2 {
+        font-size: 35px;
+        color: #a05841;
+    }
+    .underscore {
+        font-size: 28px
+    }
+    .icon {
+        max-width: 200px;
+        height: 350px;
+    }
+    .createRecipie {
+        width: 250px;
+    }
 }
 
 @media (max-width: 1560px) {
-
     .aboutPic {
         height: 400px;
         width: 500px;
     }
-
     .cards {
         display: flex;
         justify-content: center;
-        align-items:unset;
+        align-items: unset;
         flex-wrap: wrap;
     }
     .icon {
@@ -525,175 +525,147 @@ p {
         top: 210px;
     }
     .aboutPic h2 {
-        margin-top: 60px;
+        margin-top: 40px;
+        margin-bottom: 20px;
     }
-
     .buttonCardContainer {
         margin-bottom: -80px;
     }
     .underscore {
-       display: none;
+        display: none;
     }
-
     .cardButton:hover {
         background-color: #a05841;
         border-radius: 20px;
     }
-
     .form {
         width: 50%;
     }
 }
 
-    @media (max-width: 1280px) {
-        .aboutPic {
-            height: 400px;
-            width: 400px;
-        }
-        .cardButton {
-            left: 130px;
-            width: 100px;
-        }
-        .todaysDescript h2 {
-            font-size: 20px;
-           margin-top: 10px;
-        }
-
-        .aboutTodays {
-            font-size: 15px;
-        }
-
-        .recipieTitle p {
-            font-size: 20px;
-        }
-
-        .createRecipie {
-            font-size: 20px;
-        }
-
-        .form {
-            padding: 0;
-            width: 50%;
-            height: 600px;
-
-        }
-        .form-label {
-            font-size: 16px;
-        }
-        
-        .form-control {
-            height: 40px;
-            font-size: 16px;
-            width: 500px;
-        }
-
-        .recipieContainer {
-            top: 800px
-        }
-
-        @media (max-width: 1080px) {
-            .aboutPic {
-                height: 400px;
-                width: 370px;
-            }
-
-            .navbar {
-                font-size: 20px;
-                margin: 0 20px;
-            }
-            .carouselContainer {
-                margin: 0;
-            }
-
-            .aboutContent {
-                padding: 40px 0px;
-            }
-            .aboutPic h2 {
-               margin-top: 10px;
-               margin-bottom: 20px;
-            }
-
-            .todaysContent {
-                padding: 25px 0px;
-            }
-            .form {
-                width: 70%;
-    
-            }
-
-            .logo {
-                width: 500px;
-            }
-           
-        }
-
-        @media (max-width: 735px) {
-            .leftSide {
-                width: 100vw;
-                padding-top: 10px;
-                padding-bottom: 0px;
-            }
-            
-            .rightSide {
-                padding: 10px 0;
-                width: 100vw;
-                align-self: flex-end;
-            }
-            .rightSide  {
-                margin-right: 10px;
-                margin-left: 0;
-                display: flex;
-                justify-content: flex-end;
-          }
-
-          .pic {
-            height: 400px;
-        }
-
-        .logo {
-            bottom: 80px;
-        }
-
-        .todays {
-            width: 100%;
-        }
-        
-        .todaysDescript {
-            height: 400px;
-        }
-
-        .form {
-            width: 100%;
-        }
-        
-        }
-
-        @media (max-width: 525px) {
-
-    .logo {
-        width: 300px;
-        bottom: 70px;
+@media (max-width: 1280px) {
+    .aboutPic {
+        height: 400px;
+        width: 400px;
     }
-    .pic {
-        height: 300px;
+    .cardButton {
+        left: 130px;
+        width: 100px;
+    }
+    .todaysDescript h2 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    .aboutTodays {
+        font-size: 15px;
+    }
+    .recipieTitle p {
+        font-size: 20px;
     }
     .createRecipie {
-        width: 300px;
-        left: 50%;
-        transform: translateX(-50%);
+        font-size: 20px;
+    }
+    .form {
+        padding: 0;
+        width: 50%;
+        height: 600px;
     }
     .form-label {
-        font-size: 18px;
+        font-size: 16px;
     }
-    
     .form-control {
         height: 40px;
         font-size: 16px;
-        width: 90vw;
+        width: 500px;
     }
-}
-
-    @media (max-width: 460px) { 
+    .recipieContainer {
+        top: 800px
+    }
+    @media (max-width: 1080px) {
+        .aboutPic {
+            height: 400px;
+            width: 370px;
+        }
+        .navbar {
+            font-size: 20px;
+            margin: 0 20px;
+        }
+        .carouselContainer {
+            margin: 0;
+        }
+        .aboutContent {
+            padding: 40px 0px;
+        }
+        .aboutPic h2 {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .todaysContent {
+            padding: 25px 0px;
+        }
+        .form {
+            width: 70%;
+        }
+        .logo {
+            width: 500px;
+        }
+    }
+    @media (max-width: 735px) {
+        .leftSide {
+            width: 100vw;
+            padding-top: 10px;
+            padding-bottom: 0px;
+        }
+        .rightSide {
+            padding: 10px 0;
+            width: 100vw;
+            align-self: flex-end;
+        }
+        .rightSide {
+            margin-right: 10px;
+            margin-left: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .pic {
+            height: 400px;
+        }
+        .logo {
+            bottom: 80px;
+        }
+        .todays {
+            width: 100%;
+        }
+        .todaysDescript {
+            height: 400px;
+        }
+        .form {
+            width: 100%;
+        }
+    }
+    @media (max-width: 525px) {
+        .logo {
+            width: 300px;
+            bottom: 70px;
+        }
+        .pic {
+            height: 300px;
+        }
+        .createRecipie {
+            width: 300px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .form-label {
+            font-size: 18px;
+        }
+        .form-control {
+            height: 40px;
+            font-size: 16px;
+            width: 90vw;
+        }
+    }
+    @media (max-width: 460px) {
         .card {
             min-width: 340px;
         }

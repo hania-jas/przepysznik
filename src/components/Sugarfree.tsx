@@ -5,8 +5,8 @@ import SubpageCard from './SubpageCard';
 const Sugarfree = () => {
   return (
     <div className="recipieWebsite">
-        {sugarfree.map((recipie) => {
-        return <SubpageCard src={recipie.src} id={recipie.id} title={recipie.title} method={recipie.method} ingredients={recipie.ingredients}/>
+      {sugarfree.map((recipie) => {
+        return <SubpageCard src={recipie.src} id={recipie.id} title={recipie.title} method={recipie.method} ingredients={recipie.ingredients} />
       })}
     </div>
   )
