@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 
 
-const RecipieCard = ({ src, description, path }) => {
+const RecipieCard = ({ src, description, path }): JSX.Element  => {
   return (
     <div className="aboutPic">
       <h2>{description}</h2>

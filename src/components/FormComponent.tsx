@@ -1,23 +1,28 @@
-//@ts-nocheck
+
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import { AddRecipieProps } from '../types/addRecipieProps';
 
-const FormComponent = ({ addRecipie }) => {
+// interface AddRecipieProps {
+//    addRecipie: (label: string, title: string, ingredients: string[], method: string[], src?: string) => void
+// }
 
-  const [title, setTitle] = useState('');
-  const [label, setLabel] = useState('sugar free');
-  const [ingredients, setIngredients] = useState('');
-  const [method, setMethod] = useState('');
-  let splittedMethod;
-  let splittedIngredients;
+const FormComponent = ({ addRecipie } : AddRecipieProps): JSX.Element  => {
 
-  const formattedMethod = method => {
+  const [title, setTitle] = useState<string>('');
+  const [label, setLabel] = useState<string>('sugar free');
+  const [ingredients, setIngredients] = useState<string>('');
+  const [method, setMethod] = useState<string>('');
+  let splittedMethod: string[];
+  let splittedIngredients: string[];
+
+  const formattedMethod: (method: string) => void = (method: string): void => {
     setMethod(method.replace(/[a-z]\.$/, (method[method.length - 2] + '.' + '\n')));
   }
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>): void => {
     e.preventDefault();
     splittedMethod = method.split("\n")
     splittedIngredients = ingredients.split(" ")

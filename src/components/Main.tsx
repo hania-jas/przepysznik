@@ -1,4 +1,3 @@
-//@ts-nocheck
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import RecipieCard from './RecipieCard';
@@ -11,24 +10,24 @@ import FormComponent from './FormComponent';
 import RecipiesList from './RecipiesList';
 import carouselDetails from '../data/carouselDetails.json';
 import projekt from '../pictures/projekt.png';
+import { Recipie } from '../types/recipieTypes';
 
 
+const Main = (): JSX.Element => {
 
-const Main = () => {
+  const [recipie, setRecipie] = useState<Recipie[]>(data);
 
-  const [recipie, setRecipie] = useState(data);
-
-  const saveData = (newRecipies) => {
+  const saveData = (newRecipies: Recipie[]): void => {
     localStorage.setItem("recipies", JSON.stringify(newRecipies));
   };
 
-  useEffect(() => {
+  useEffect((): void => {
     if (localStorage.getItem("recipies")) {
-      setRecipie(JSON.parse(localStorage.getItem("recipies")));
+      setRecipie(JSON.parse(localStorage.getItem("recipies")!));
     }
   }, []);
 
-  const addRecipie = (title, label, ingredients, method, src) => {
+  const addRecipie = (label: string, title: string, ingredients: string[], method: string[], src?: string,)  => {
     if (label === 'sugar free') {
       src = 'images/sugar.png'
     } else if (label === 'gluten free') {
@@ -39,7 +38,7 @@ const Main = () => {
       src = './images/everything.png';
     }
 
-    let newRecipiesList = [...recipie];
+    let newRecipiesList: Recipie[] = [...recipie];
     newRecipiesList = [...newRecipiesList, { id: newRecipiesList.length + 1, title: title, label: label, ingredients: ingredients, src: src, method: method }];
     saveData(newRecipiesList);
     setRecipie(newRecipiesList);
@@ -47,11 +46,10 @@ const Main = () => {
     console.log(newRecipiesList)
   }
 
-  const deleteRecipie = (id) => {
+  const deleteRecipie: (id: number) => void = (id: number): void => {
     let filteredRecipies = recipie.filter(recipie => recipie.id !== id)
     setRecipie(filteredRecipies);
     saveData(filteredRecipies);
-    console.log(recipie.id);
   }
 
 

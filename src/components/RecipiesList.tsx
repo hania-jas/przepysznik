@@ -2,7 +2,7 @@
 import React from 'react';
 import Recipie from './Recipie'
 
-const RecipiesList = ({ recipiesList, deleteRecipie }) => {
+const RecipiesList = ({ recipiesList, deleteRecipie }): JSX.Element  => {
   return (
     <div className="recipieContainer">
       {recipiesList.map((recipie) => {

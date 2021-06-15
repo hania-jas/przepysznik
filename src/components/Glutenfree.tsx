@@ -2,7 +2,7 @@ import React from 'react';
 import glutenfree from '../data/glutenfree.json';
 import SubpageCard from './SubpageCard';
 
-const Glutenfree = () => {
+const Glutenfree = (): JSX.Element  => {
   return (
     <div className="recipieWebsite">
       {glutenfree.map((recipie) => {

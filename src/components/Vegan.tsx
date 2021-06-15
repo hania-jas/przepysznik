@@ -2,7 +2,7 @@ import React from 'react';
 import vegan from '../data/vegan.json'
 import SubpageCard from './SubpageCard';
 
-const Vegan = () => {
+const Vegan = (): JSX.Element  => {
   return (
     <div className="recipieWebsite">
       {vegan.map((recipie) => {

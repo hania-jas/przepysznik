@@ -4,8 +4,8 @@ import Modal from 'react-bootstrap/Modal';
 import Badge from 'react-bootstrap/Badge';
 import Pdf from "react-to-pdf";
 
-const TodaysCard = ({ src, title, label, ingredients, method }) => {
-  const [show, setShow] = useState(false);
+const TodaysCard = ({ src, title, label, ingredients, method }): JSX.Element  => {
+  const [show, setShow] = useState<boolean>(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);

@@ -1,12 +1,22 @@
-//@ts-nocheck
+
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
+//@ts-ignore
 import Pdf from "react-to-pdf";
 
-const Recipie = ({ recipie, deleteRecipie }) => {
-  const ref = React.createRef();
+interface Methods {
+  recipie: { id: number;
+    title: string;
+    label: string;
+    src: string;
+    ingredients: string[];
+    method: string[]};
+  deleteRecipie: (id: number) => void
+}
 
+const Recipie = ({ recipie, deleteRecipie }: Methods): JSX.Element  => {
+  const ref: any= React.createRef();
 
   return (
     <div className="card" key={recipie.id}>
@@ -36,7 +46,7 @@ const Recipie = ({ recipie, deleteRecipie }) => {
       </div>
       <div className="containerPdf">
         <Pdf targetRef={ref} filename="recipie.pdf">
-          {({ toPdf }) => <button onClick={toPdf} className="generatePdf">Download PDF</button>}
+          {({ toPdf }: any) => <button onClick={toPdf} className="generatePdf">Download PDF</button>}
         </Pdf>
       </div>
     </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import everything from '../data/everything.json';
 import SubpageCard from './SubpageCard';
 
-const Everything = () => {
+const Everything = (): JSX.Element  => {
   return (
     <div className="recipieWebsite">
       {everything.map((recipie) => {

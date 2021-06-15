@@ -2,7 +2,7 @@ import React from 'react';
 import sugarfree from '../data/sugarfree.json';
 import SubpageCard from './SubpageCard';
 
-const Sugarfree = () => {
+const Sugarfree = (): JSX.Element  => {
   return (
     <div className="recipieWebsite">
       {sugarfree.map((recipie) => {
