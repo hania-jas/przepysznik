@@ -4,19 +4,11 @@ import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
 //@ts-ignore
 import Pdf from "react-to-pdf";
+import { RecipieProps } from '../types/recipieProps';
 
-interface Methods {
-  recipie: { id: number;
-    title: string;
-    label: string;
-    src: string;
-    ingredients: string[];
-    method: string[]};
-  deleteRecipie: (id: number) => void
-}
 
-const Recipie = ({ recipie, deleteRecipie }: Methods): JSX.Element  => {
-  const ref: any= React.createRef();
+const Recipie = ({ recipie, deleteRecipie}: RecipieProps): JSX.Element  => {
+  const ref: React.RefObject<HTMLInputElement> | null = React.createRef();
 
   return (
     <div className="card" key={recipie.id}>

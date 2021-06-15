@@ -1,7 +1,6 @@
-export interface RecipieTypes {
+export interface SubpageProps {
     id: number;
     title: string;
-    label: string;
     src: string;
     ingredients: string[];
     method: string[];

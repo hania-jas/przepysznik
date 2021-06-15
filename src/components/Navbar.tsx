@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 const Navbar = (): JSX.Element  => {
   return (
     <nav className='navbar'>

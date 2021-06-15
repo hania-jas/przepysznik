@@ -10,14 +10,14 @@ import FormComponent from './FormComponent';
 import RecipiesList from './RecipiesList';
 import carouselDetails from '../data/carouselDetails.json';
 import projekt from '../pictures/projekt.png';
-import { Recipie } from '../types/recipieTypes';
+import { RecipieTypes } from '../types/recipieTypes';
 
 
 const Main = (): JSX.Element => {
 
-  const [recipie, setRecipie] = useState<Recipie[]>(data);
+  const [recipie, setRecipie] = useState<RecipieTypes[]>(data);
 
-  const saveData = (newRecipies: Recipie[]): void => {
+  const saveData = (newRecipies: RecipieTypes[]): void => {
     localStorage.setItem("recipies", JSON.stringify(newRecipies));
   };
 
@@ -38,7 +38,7 @@ const Main = (): JSX.Element => {
       src = './images/everything.png';
     }
 
-    let newRecipiesList: Recipie[] = [...recipie];
+    let newRecipiesList: RecipieTypes[] = [...recipie];
     newRecipiesList = [...newRecipiesList, { id: newRecipiesList.length + 1, title: title, label: label, ingredients: ingredients, src: src, method: method }];
     saveData(newRecipiesList);
     setRecipie(newRecipiesList);

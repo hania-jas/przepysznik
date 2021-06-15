@@ -1,23 +1,24 @@
-//@ts-nocheck
-import { React, useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Badge from 'react-bootstrap/Badge';
+//@ts-ignore
 import Pdf from "react-to-pdf";
+import { RecipieTypes } from '../types/recipieTypes';
 
-const TodaysCard = ({ src, title, label, ingredients, method }): JSX.Element  => {
+const TodaysCard = ({ id, src, title, label, ingredients, method }: RecipieTypes): JSX.Element  => {
   const [show, setShow] = useState<boolean>(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose: () => void = (): void => setShow(false);
+  const handleShow: () => void = (): void => setShow(true);
 
-  const ref = useRef();
+  const ref: React.RefObject<HTMLInputElement> | null = React.createRef();
 
   return (
 
     <>
-      <div className="todays todaysDarken" onClick={handleShow}>
+      <div className="todays todaysDarken" onClick={handleShow} key={id}>
         <img src={src} alt="" className="todaysPic" />
-        <div class="recipieTitle">
+        <div className="recipieTitle">
           <p>{title}</p></div>
       </div>
 
@@ -34,7 +35,9 @@ const TodaysCard = ({ src, title, label, ingredients, method }): JSX.Element  =>
           </section>
         </Modal.Header>
         <Modal.Body ref={ref}>
-          <Badge variant="light" className="badgeIngredient">{ingredients}</Badge>
+        {ingredients.map(ingredient => {
+            return <Badge variant="light" className="badgeIngredient">{ingredient}</Badge>
+          })}
           <div className="methodContainer">
             {method.map(method => {
               return <p className="method">{method}</p>
@@ -44,7 +47,7 @@ const TodaysCard = ({ src, title, label, ingredients, method }): JSX.Element  =>
         <Modal.Footer>
           <div className="containerPdf">
             <Pdf targetRef={ref} filename="recipie.pdf">
-              {({ toPdf }) => <button onClick={toPdf} className="generatePdf">Download PDF</button>}
+              {({ toPdf }: any) => <button onClick={toPdf} className="generatePdf">Download PDF</button>}
             </Pdf>
           </div>
         </Modal.Footer>

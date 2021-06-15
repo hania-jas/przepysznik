@@ -4,9 +4,6 @@ import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { AddRecipieProps } from '../types/addRecipieProps';
 
-// interface AddRecipieProps {
-//    addRecipie: (label: string, title: string, ingredients: string[], method: string[], src?: string) => void
-// }
 
 const FormComponent = ({ addRecipie } : AddRecipieProps): JSX.Element  => {
 
