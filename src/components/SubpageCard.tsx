@@ -1,24 +1,11 @@
 //@ts-nocheck
 import React from 'react';
-import ToPDF from './ToPDF';
-import { renderToString } from "react-dom/server";
-import { jsPDF } from "jspdf";
+import Pdf from "react-to-pdf";
+import Badge from 'react-bootstrap/Badge';
 
-const Subpage = ({ id, title, src, ingredients, method }) => {
+const Subpage = ({ id, title, src, ingredients, method }): JSX.Element  => {
 
-  const print = () => {
-    const string = renderToString(<ToPDF method={method} ingredients={ingredients} />);
-    const pdf = new jsPDF();
-
-    pdf.html(string, {
-      callback: function (doc) {
-        doc.setFont('Times New Roman')
-        doc.setFontSize(10);
-        console.log(doc.getFontSize());
-        doc.save();
-      }
-    });
-  };
+  const ref = React.createRef();
 
   return (
     <div className="card subCard" key={id}>
@@ -30,9 +17,22 @@ const Subpage = ({ id, title, src, ingredients, method }) => {
           <img className="recipieLabel" src={src} alt="" />
         </div>
       </section>
-      <ToPDF method={method} ingredients={ingredients} />
+      <div ref={ref} className="toPDF">
+        <div className="badgePaddingContainer">
+          {ingredients.map(ingredient => {
+            return <Badge variant="light" className="badgeIngredient">{ingredient}</Badge>
+          })}
+        </div>
+        <div className="methodContainer">
+          {method.map(method => {
+            return <p className="method">{method}</p>
+          })}
+        </div>
+      </div>
       <div className="containerPdf">
-        <button onClick={print} className="generatePdf">Download PDF</button>
+        <Pdf targetRef={ref} filename="recipie.pdf">
+          {({ toPdf }) => <button onClick={toPdf} className="generatePdf">Download PDF</button>}
+        </Pdf>
       </div>
     </div>
   )
