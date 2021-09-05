@@ -5,10 +5,12 @@ import Badge from 'react-bootstrap/Badge';
 //@ts-ignore
 import Pdf from "react-to-pdf";
 import { RecipieProps } from '../types/recipieProps';
+import { useTranslation } from "react-i18next";
 
 
 const Recipie = ({ recipie, deleteRecipie}: RecipieProps): JSX.Element  => {
   const ref: React.RefObject<HTMLInputElement> | null = React.createRef();
+  const { t } = useTranslation();
 
   return (
     <div className="card" key={recipie.id}>
@@ -22,7 +24,7 @@ const Recipie = ({ recipie, deleteRecipie}: RecipieProps): JSX.Element  => {
         </div>
       </section>
       <div>
-        <Badge variant="info" className="badgeLabel">{recipie.label}</Badge>
+        <Badge variant="info" className="badgeLabel">{t(recipie.label)}</Badge>
       </div>
       <div ref={ref}>
         <div className="badgeIngContainer">
@@ -38,7 +40,7 @@ const Recipie = ({ recipie, deleteRecipie}: RecipieProps): JSX.Element  => {
       </div>
       <div className="containerPdf">
         <Pdf targetRef={ref} filename="recipie.pdf">
-          {({ toPdf }: any) => <button onClick={toPdf} className="generatePdf">Download PDF</button>}
+          {({ toPdf }: any) => <button onClick={toPdf} className="generatePdf">{t("recipie.download_button")}</button>}
         </Pdf>
       </div>
     </div>

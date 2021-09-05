@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import RecipieCard from './RecipieCard';
@@ -12,10 +13,15 @@ import carouselDetails from '../data/carouselDetails.json';
 import projekt from '../pictures/projekt.png';
 import { RecipieTypes } from '../types/recipieTypes';
 
+import { useTranslation } from "react-i18next";
+import i18n from '../i18n';
+
+
 
 const Main = (): JSX.Element => {
 
   const [recipie, setRecipie] = useState<RecipieTypes[]>(data);
+  const { t } = useTranslation();
 
   const saveData = (newRecipies: RecipieTypes[]): void => {
     localStorage.setItem("recipies", JSON.stringify(newRecipies));
@@ -81,20 +87,19 @@ const Main = (): JSX.Element => {
       </section>
       <section id="todays" className="todaysContent">
         <div className="todays todaysDescript">
-          <h2>TODAYS INSPIRATION</h2>
+          <h2>{t('main.todays.title')}</h2>
           <p className="secondUnderscore">_</p>
-          <div className="aboutTodays">In this section you can find our every day recipie inspirations for your breakfast, dinner and supper. <br />
-            Click on the picture and find out how easly and quickly you can prepare sofisticated meals. Try to make your perfect day with amazing and delicious recpies! <br />
-            This week we are focused on healthy inspirations. <br /> If you want to feel better and healthier and try something with an idea, do not hesitate and discover our suggestions!
+          <div className="aboutTodays">
+            {t("main.todays.content")}
           </div>
         </div>
         {todaysDetails.map((detail) => {
-          return <TodaysCard {...detail} />
+          return <TodaysCard {...detail} ingredients={t(detail.ingredients, { returnObjects: true  })} method={t(detail.method, { returnObjects: true })}/>
         })}
       </section>
       <section id="addRecipie" className="addYours">
         <div className="centeringContainer">
-          <div className="createRecipie">CREATE YOUR OWN RECPIES!</div>
+          <div className="createRecipie">{t("main.create.recipie")}</div>
         </div>
         <FormComponent addRecipie={addRecipie} />
         <RecipiesList recipiesList={recipie} deleteRecipie={deleteRecipie} />

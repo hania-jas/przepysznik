@@ -5,14 +5,17 @@ import {
   Link
 } from 'react-router-dom';
 import { RecipieCardProps } from '../types/recipieCardProps';
+import { useTranslation } from "react-i18next";
 
 const RecipieCard = ({ src, description, path }: RecipieCardProps): JSX.Element  => {
+  const { t } = useTranslation();
+
   return (
     <div className="aboutPic">
-      <h2>{description}</h2>
+      <h2>{t(description)}</h2>
       <p className="underscore">_</p>
       <div className="buttonCardContainer">
-        <Link to={path} className="cardButton">see recipies</Link>
+        <Link to={path} className="cardButton">{t("recipie.card.see_recipies")}</Link>
       </div>
       <img src={src} alt="" className="icon" />
     </div>

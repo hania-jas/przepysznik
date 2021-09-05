@@ -4,6 +4,7 @@ import Badge from 'react-bootstrap/Badge';
 //@ts-ignore
 import Pdf from "react-to-pdf";
 import { RecipieTypes } from '../types/recipieTypes';
+import { useTranslation } from "react-i18next";
 
 const TodaysCard = ({ id, src, title, label, ingredients, method }: RecipieTypes): JSX.Element  => {
   const [show, setShow] = useState<boolean>(false);
@@ -12,6 +13,7 @@ const TodaysCard = ({ id, src, title, label, ingredients, method }: RecipieTypes
   const handleShow: () => void = (): void => setShow(true);
 
   const ref: React.RefObject<HTMLInputElement> | null = React.createRef();
+  const { t } = useTranslation();
 
   return (
 
@@ -19,7 +21,7 @@ const TodaysCard = ({ id, src, title, label, ingredients, method }: RecipieTypes
       <div className="todays todaysDarken" onClick={handleShow} key={id}>
         <img src={src} alt="" className="todaysPic" />
         <div className="recipieTitle">
-          <p>{title}</p></div>
+          <p>{t(title)}</p></div>
       </div>
 
       <Modal show={show} onHide={handleClose} centered size="lg" className="modal">
@@ -27,7 +29,7 @@ const TodaysCard = ({ id, src, title, label, ingredients, method }: RecipieTypes
         <Modal.Header closeButton >
           <section className="titleModalContainer">
             <div className="titleHeader">
-              <Modal.Title>{title}</Modal.Title>
+              <Modal.Title>{t(title)}</Modal.Title>
             </div>
             <div className="recipieLabelContainer">
               <img className="recipieLabel" src={label} alt="" />
@@ -36,11 +38,11 @@ const TodaysCard = ({ id, src, title, label, ingredients, method }: RecipieTypes
         </Modal.Header>
         <Modal.Body ref={ref}>
         {ingredients.map(ingredient => {
-            return <Badge variant="light" className="badgeIngredient">{ingredient}</Badge>
+            return <Badge variant="light" className="badgeIngredient">{t(ingredient)}</Badge>
           })}
           <div className="methodContainer">
             {method.map(method => {
-              return <p className="method">{method}</p>
+              return <p className="method">{t(method)}</p>
             })}
           </div>
         </Modal.Body>

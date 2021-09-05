@@ -1,26 +1,26 @@
 [
   {
     "id": 1,
-    "title": "Summer Salad",
+    "title": "todays.card.title.summer_salad",
     "src": "images/breakfast.jpg",
     "label": "images/vega.png",
-    "ingredients": ["egg, cheese, 2 tomatoes, 3 potatoes"],
-    "method": ["1. Do something,","2. Do something else", "Blabla"]
+    "ingredients": "todays.card.summer_salad.ingredients",
+    "method": "todays.card.method.summer_salad"
   },
   {
     "id": 2,
-    "title": "Green Tacos",
+    "title": "todays.card.title.green_tacos",
     "src": "images/dinner.jpg",
     "label": "images/gluten.png",
-    "ingredients": ["egg, cheese, 2 tomatoes, 3 potatoes"],
-    "method": ["1. Do something,","2. Do something else", "Blabla"]
+    "ingredients": "todays.card.green_tacos.ingredients",
+    "method": "todays.card.method.green_tacos"
   },
   {
     "id": 3,
-    "title": "Basil cream sandwich",
+    "title": "todays.card.title.basil_cream_sandwich",
     "src": "images/supper.jpg",
     "label": "images/vega.png",
-    "ingredients": ["egg, cheese, 2 tomatoes, 3 potatoes"],
-    "method": ["1. Do something,","2. Do something else", "Blabla"]
+    "ingredients": "todays.card.basil_cream_sandwich.ingredients",
+    "method": "todays.card.method.basil_cream_sandwich"
   }
 ]
