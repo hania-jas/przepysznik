@@ -7,11 +7,11 @@ import {
 import { RecipieCardProps } from '../types/recipieCardProps';
 import { useTranslation } from "react-i18next";
 
-const RecipieCard = ({ src, description, path }: RecipieCardProps): JSX.Element  => {
+const RecipieCard = ({ src, description, path, theme }: RecipieCardProps): JSX.Element  => {
   const { t } = useTranslation();
 
   return (
-    <div className="aboutPic">
+    <div className={`aboutPic ${theme}`}>
       <h2>{t(description)}</h2>
       <p className="underscore">_</p>
       <div className="buttonCardContainer">

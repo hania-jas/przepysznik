@@ -8,14 +8,37 @@
     src: url(fonts/Philosopher-Regular.ttf);
 }
 
+.dark {
+    --text-color: #b0b3b8;
+    --page-background-color: #242526;
+    --card-backgorund-color: #3a3b3c;
+    --recipie-background-color: #555f5e;
+    --recipie-text-color: #ededee;
+    --form-text-background: #f8f9fa;
+    /* background-color: #242526; */
+}
+
+.light {
+    --text-color: #a05841;
+    --page-background-color: #ededee;
+    --card-backgorund-color: #fefefe;
+    --recipie-background-color: #fefefe;
+    --recipie-text-color: #000;
+    --form-text-background: #fefefe;
+}
+
 .toPDF {
     width: 100%;
 }
 
 body {
     width: 100%;
-    background-color: #ededee;
+    background-color: var(--page-background-color);
     font-family: 'Korolev';
+}
+
+.darkTheme {
+    background-color: #242526;
 }
 
 .navbar {
@@ -56,7 +79,6 @@ body {
 .aboutContent {
     padding: 40px 100px;
     display: flex;
-    background-color: #ededee;
     width: 100%;
     justify-content: center;
 }
@@ -87,18 +109,18 @@ body {
 .aboutPic {
     height: 530px;
     width: 350px;
-    background-color: #fefefe;
+    background-color: var(--card-backgorund-color);
     margin: 10px 20px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: var(--text-color);
 }
 
 .aboutPic h2 {
     font-size: 40px;
-    color: #a05841;
     margin-top: 60px;
 }
 
@@ -107,7 +129,6 @@ body {
     line-height: 60px;
     position: relative;
     bottom: 40px;
-    color: #a05841;
 }
 
 .icon {
@@ -172,7 +193,6 @@ body {
 .todaysContent {
     box-sizing: border-box;
     padding: 25px 100px;
-    background-color: #ededee;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -208,12 +228,12 @@ body {
 
 .todaysDescript {
     font-family: 'Philosopher';
-    background-color: #ffffff;
+    background-color: var(--card-backgorund-color);
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    color: #a05841;
+    color: var(--text-color);
 }
 
 .todaysDescript h2 {
@@ -273,6 +293,7 @@ body {
     position: absolute;
     font-family: 'Philosopher';
     opacity: 0.7;
+    color: #b0b3b8;
 }
 
 .form {
@@ -298,6 +319,8 @@ body {
     height: 50px;
     font-size: 18px;
     width: 600px;
+    background-color: var(--form-text-background);
+    
 }
 
 .button {
@@ -324,6 +347,8 @@ body {
     font-family: 'Philosopher';
     padding: 20px;
     height: fit-content;
+    background-color: var(--recipie-background-color);
+    color: var(--recipie-text-color);
 }
 
 .modal-content {
@@ -504,7 +529,6 @@ p {
     }
     .aboutPic h2 {
         font-size: 35px;
-        color: #a05841;
     }
     .underscore {
         font-size: 28px
@@ -536,7 +560,7 @@ p {
     .cardButton {
         left: 150px;
         background-color: transparent;
-        color: #a05841;
+        color: var(--text-color);
         font-size: 20px;
         height: 40px;
         width: 120px;

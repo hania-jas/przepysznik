@@ -21,6 +21,7 @@ import i18n from '../i18n';
 const Main = (): JSX.Element => {
 
   const [recipie, setRecipie] = useState<RecipieTypes[]>(data);
+  const [theme, setTheme] = useState<string>('light')
   const { t } = useTranslation();
 
   const saveData = (newRecipies: RecipieTypes[]): void => {
@@ -58,10 +59,22 @@ const Main = (): JSX.Element => {
     saveData(filteredRecipies);
   }
 
+  const toggleBodyTheme = () => {
+    if(theme === 'light') {
+      document.body.classList.remove('light');
+      document.body.classList.add('dark');
+      setTheme('dark');
+    } else if(theme === 'dark') {
+      document.body.classList.remove('dark');
+      document.body.classList.add('light');
+      setTheme('light');
+    }
+    console.log(theme)
+  }
 
   return (
-    <div className="Main">
-      <Navbar />
+    <div className="Main App">
+      <Navbar toggleBodyTheme={toggleBodyTheme}/>
       <Carousel className='carouselContainer'>
         {carouselDetails.map((detail) => {
           return (
@@ -81,12 +94,12 @@ const Main = (): JSX.Element => {
       <section id="recipies" className="aboutContent">
         <div className="cards">
           {recipiesDetails.map((detail) => {
-            return <RecipieCard {...detail} />
+            return <RecipieCard {...detail} theme={detail.theme}/>
           })}
         </div>
       </section>
       <section id="todays" className="todaysContent">
-        <div className="todays todaysDescript">
+        <div className={`todays todaysDescript ${theme}`}>
           <h2>{t('main.todays.title')}</h2>
           <p className="secondUnderscore">_</p>
           <div className="aboutTodays">
@@ -97,11 +110,11 @@ const Main = (): JSX.Element => {
           return <TodaysCard {...detail} ingredients={t(detail.ingredients, { returnObjects: true  })} method={t(detail.method, { returnObjects: true })}/>
         })}
       </section>
-      <section id="addRecipie" className="addYours">
+      <section id="addRecipie" className="addYours App">
         <div className="centeringContainer">
           <div className="createRecipie">{t("main.create.recipie")}</div>
         </div>
-        <FormComponent addRecipie={addRecipie} />
+        <FormComponent addRecipie={addRecipie} theme={theme}/>
         <RecipiesList recipiesList={recipie} deleteRecipie={deleteRecipie} />
       </section>
     </div>

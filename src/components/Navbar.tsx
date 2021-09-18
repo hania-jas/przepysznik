@@ -1,8 +1,9 @@
+//@ts-nocheck
 import React, { useState } from 'react';
 // import '../i18n';
 import { useTranslation } from "react-i18next";
 
-const Navbar = (): JSX.Element => {
+const Navbar = ({toggleBodyTheme}): JSX.Element => {
   const { t, i18n } = useTranslation();
   const [isLanguage, setIsLanguage] = useState('en');
 
@@ -25,6 +26,7 @@ const Navbar = (): JSX.Element => {
         <button className='changeLanguage' onClick={() => changeLang(isLanguage)}>{isLanguage === 'en' ? 'EN' : 'PL'}</button>
       </div>
       <div className='rightSide'>
+        <button onClick={toggleBodyTheme}>theme</button>
         <a href="#recipies">{t("navbar.recipies")}</a>
         <a href="#todays">{t("navbar.todays")}</a>
         <a href="#addRecipie">{t("navbar.add_yours")}</a>
