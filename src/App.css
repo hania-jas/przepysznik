@@ -15,7 +15,7 @@
     --recipie-background-color: #555f5e;
     --recipie-text-color: #ededee;
     --form-text-background: #f8f9fa;
-    /* background-color: #242526; */
+    --change-language-background: #555f5e;
 }
 
 .light {
@@ -25,6 +25,7 @@
     --recipie-background-color: #fefefe;
     --recipie-text-color: #000;
     --form-text-background: #fefefe;
+    --change-language-background: #dadada
 }
 
 .toPDF {
@@ -72,9 +73,10 @@ body {
     width: 50px;
     height: 50px;
     margin-left: 10px;
-    color: #b4ab9b;
-    border: 1px solid #dadada;
+    color: var(--text-color);
+    border: 1px solid var(--card-backgorund-color);
     padding-bottom: 5px;
+    background-color: var(--change-language-background);
 }
 .aboutContent {
     padding: 40px 100px;

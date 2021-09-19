@@ -1,11 +1,11 @@
-//@ts-nocheck
-import React, { useState } from 'react';
-// import '../i18n';
+import React, { useState, useContext } from 'react';
 import { useTranslation } from "react-i18next";
+import { ThemeContext } from './ThemeProvider';
 
-const Navbar = ({toggleBodyTheme}): JSX.Element => {
+const Navbar = (): JSX.Element => {
   const { t, i18n } = useTranslation();
   const [isLanguage, setIsLanguage] = useState('en');
+  const { toggleBodyTheme } = useContext(ThemeContext);
 
   const changeLang: (lang: string) => void = (lang: string): void => {
     if (lang === 'en') {

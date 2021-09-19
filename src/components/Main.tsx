@@ -1,5 +1,4 @@
-//@ts-nocheck
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Navbar from './Navbar';
 import RecipieCard from './RecipieCard';
 import Carousel from 'react-bootstrap/Carousel';
@@ -9,20 +8,18 @@ import todaysDetails from '../data/todaysDetails.json';
 import TodaysCard from './TodaysCard';
 import FormComponent from './FormComponent';
 import RecipiesList from './RecipiesList';
+import { ThemeContext } from './ThemeProvider';
 import carouselDetails from '../data/carouselDetails.json';
 import projekt from '../pictures/projekt.png';
 import { RecipieTypes } from '../types/recipieTypes';
 
 import { useTranslation } from "react-i18next";
-import i18n from '../i18n';
-
-
 
 const Main = (): JSX.Element => {
 
   const [recipie, setRecipie] = useState<RecipieTypes[]>(data);
-  const [theme, setTheme] = useState<string>('light')
   const { t } = useTranslation();
+  const { theme } = useContext(ThemeContext);
 
   const saveData = (newRecipies: RecipieTypes[]): void => {
     localStorage.setItem("recipies", JSON.stringify(newRecipies));
@@ -59,22 +56,10 @@ const Main = (): JSX.Element => {
     saveData(filteredRecipies);
   }
 
-  const toggleBodyTheme = () => {
-    if(theme === 'light') {
-      document.body.classList.remove('light');
-      document.body.classList.add('dark');
-      setTheme('dark');
-    } else if(theme === 'dark') {
-      document.body.classList.remove('dark');
-      document.body.classList.add('light');
-      setTheme('light');
-    }
-    console.log(theme)
-  }
 
   return (
     <div className="Main App">
-      <Navbar toggleBodyTheme={toggleBodyTheme}/>
+      <Navbar />
       <Carousel className='carouselContainer'>
         {carouselDetails.map((detail) => {
           return (
@@ -94,7 +79,7 @@ const Main = (): JSX.Element => {
       <section id="recipies" className="aboutContent">
         <div className="cards">
           {recipiesDetails.map((detail) => {
-            return <RecipieCard {...detail} theme={detail.theme}/>
+            return <RecipieCard {...detail} />
           })}
         </div>
       </section>
@@ -114,7 +99,7 @@ const Main = (): JSX.Element => {
         <div className="centeringContainer">
           <div className="createRecipie">{t("main.create.recipie")}</div>
         </div>
-        <FormComponent addRecipie={addRecipie} theme={theme}/>
+        <FormComponent addRecipie={addRecipie} />
         <RecipiesList recipiesList={recipie} deleteRecipie={deleteRecipie} />
       </section>
     </div>

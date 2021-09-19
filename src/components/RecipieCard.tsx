@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -6,9 +6,11 @@ import {
 } from 'react-router-dom';
 import { RecipieCardProps } from '../types/recipieCardProps';
 import { useTranslation } from "react-i18next";
+import { ThemeContext } from './ThemeProvider';
 
-const RecipieCard = ({ src, description, path, theme }: RecipieCardProps): JSX.Element  => {
+const RecipieCard = ({ src, description, path }: RecipieCardProps): JSX.Element  => {
   const { t } = useTranslation();
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div className={`aboutPic ${theme}`}>
