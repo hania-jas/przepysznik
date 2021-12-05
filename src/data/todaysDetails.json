@@ -5,7 +5,8 @@
     "src": "images/breakfast.jpg",
     "label": "images/vega.png",
     "ingredients": "todays.card.summer_salad.ingredients",
-    "method": "todays.card.method.summer_salad"
+    "method": "todays.card.method.summer_salad",
+    "date": "20-03-2020"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "src": "images/dinner.jpg",
     "label": "images/gluten.png",
     "ingredients": "todays.card.green_tacos.ingredients",
-    "method": "todays.card.method.green_tacos"
+    "method": "todays.card.method.green_tacos",
+    "date": "20-03-2020"
   },
   {
     "id": 3,
@@ -21,6 +23,7 @@
     "src": "images/supper.jpg",
     "label": "images/vega.png",
     "ingredients": "todays.card.basil_cream_sandwich.ingredients",
-    "method": "todays.card.method.basil_cream_sandwich"
+    "method": "todays.card.method.basil_cream_sandwich",
+    "date": "20-03-2020"
   }
 ]

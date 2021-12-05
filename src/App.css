@@ -91,6 +91,11 @@ body {
     width: auto;
 }
 
+.date {
+    color: #212529;
+    font-size: 13px;
+}
+
 .carousel-inner {
     background-color: black;
 }
@@ -419,8 +424,9 @@ body {
 
 .containerPdf {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     align-items: flex-end;
+    width: 100%;
 }
 
 .generatePdf {

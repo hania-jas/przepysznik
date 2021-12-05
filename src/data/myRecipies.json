@@ -4,19 +4,22 @@
     "label": "sugar free",
     "src": "images/sugar.png",
     "ingredients": ["egg", "cheese", "2 tomatoes", "3 potatoes"],
-    "method": ["1. Do something,", "2. Do something else", "Blabla"]
+    "method": ["1. Do something,", "2. Do something else", "Blabla"],
+    "date": "30-03-2020"
 }, {
     "id": 2,
     "title": "Salad",
     "label": "vegan",
     "src": "images/vega.png",
     "ingredients": ["egg", "cheese", "2 tomatoes", "3 potatoes"],
-    "method": ["1. Do something,", "2. Do something else", "Blabla"]
+    "method": ["1. Do something,", "2. Do something else", "Blabla"],
+    "date": "30-03-2020"
 }, {
     "id": 3,
     "title": "Burger",
     "label": "gluten free",
     "src": "images/gluten.png",
     "ingredients": ["egg", "cheese", "2 tomatoes", "3 potatoes"],
-    "method": ["1. Do something,", "2. Do something else", "Blabla"]
+    "method": ["1. Do something,", "2. Do something else", "Blabla"],
+    "date": "30-03-2020"
 }]

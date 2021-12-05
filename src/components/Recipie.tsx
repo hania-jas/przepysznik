@@ -8,7 +8,7 @@ import { RecipieProps } from '../types/recipieProps';
 import { useTranslation } from "react-i18next";
 
 
-const Recipie = ({ recipie, deleteRecipie}: RecipieProps): JSX.Element  => {
+const Recipie = ({ recipie, deleteRecipie }: RecipieProps): JSX.Element  => {
   const ref: React.RefObject<HTMLInputElement> | null = React.createRef();
   const { t } = useTranslation();
 
@@ -39,6 +39,7 @@ const Recipie = ({ recipie, deleteRecipie}: RecipieProps): JSX.Element  => {
         </div>
       </div>
       <div className="containerPdf">
+        <div className="date">{recipie.date}</div>
         <Pdf targetRef={ref} filename="recipie.pdf">
           {({ toPdf }: any) => <button onClick={toPdf} className="generatePdf">{t("recipie.download_button")}</button>}
         </Pdf>

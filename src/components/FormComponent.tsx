@@ -4,6 +4,7 @@ import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { AddRecipieProps } from '../types/addRecipieProps';
 import { useTranslation } from "react-i18next";
+const dayjs = require('dayjs')
 
 
 const FormComponent = ({ addRecipie } : AddRecipieProps): JSX.Element  => {
@@ -12,6 +13,7 @@ const FormComponent = ({ addRecipie } : AddRecipieProps): JSX.Element  => {
   const [label, setLabel] = useState<string>('sugar free');
   const [ingredients, setIngredients] = useState<string>('');
   const [method, setMethod] = useState<string>('');
+  const date = dayjs().format('DD-MM-YYYY');
   let splittedMethod: string[];
   let splittedIngredients: string[];
   const { t, i18n } = useTranslation();
@@ -26,7 +28,7 @@ const FormComponent = ({ addRecipie } : AddRecipieProps): JSX.Element  => {
     splittedMethod = method.split("\n")
     splittedIngredients = ingredients.split(" ")
     console.log(splittedMethod);
-    addRecipie(title, label, splittedIngredients, splittedMethod);
+    addRecipie(title, label, splittedIngredients, splittedMethod, date);
     setTitle('');
     setIngredients('');
     setMethod('');

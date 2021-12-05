@@ -31,7 +31,7 @@ const Main = (): JSX.Element => {
     }
   }, []);
 
-  const addRecipie = (label: string, title: string, ingredients: string[], method: string[], src?: string,)  => {
+  const addRecipie = (label: string, title: string, ingredients: string[], method: string[], date: string, src?: string)  => {
     if (label === 'sugar free') {
       src = 'images/sugar.png'
     } else if (label === 'gluten free') {
@@ -43,7 +43,7 @@ const Main = (): JSX.Element => {
     }
 
     let newRecipiesList: RecipieTypes[] = [...recipie];
-    newRecipiesList = [...newRecipiesList, { id: newRecipiesList.length + 1, title: title, label: label, ingredients: ingredients, src: src, method: method }];
+    newRecipiesList = [...newRecipiesList, { id: newRecipiesList.length + 1, title: title, label: label, ingredients: ingredients, src: src, method: method, date: date }];
     saveData(newRecipiesList);
     setRecipie(newRecipiesList);
 

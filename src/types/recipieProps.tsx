@@ -6,6 +6,7 @@ export interface RecipieProps {
     src: string;
     ingredients: string[];
     method: string[];
+    date: string;
     },
     deleteRecipie: (id: number) => void; 
 }

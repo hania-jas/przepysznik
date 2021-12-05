@@ -5,4 +5,5 @@ export interface RecipieTypes {
     src: string;
     ingredients: string[];
     method: string[];
+    date: string;
 }

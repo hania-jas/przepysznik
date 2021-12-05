@@ -6,7 +6,7 @@ import Pdf from "react-to-pdf";
 import { RecipieTypes } from '../types/recipieTypes';
 import { useTranslation } from "react-i18next";
 
-const TodaysCard = ({ id, src, title, label, ingredients, method }: RecipieTypes): JSX.Element  => {
+const TodaysCard = ({ id, src, title, label, ingredients, method, date }: RecipieTypes): JSX.Element  => {
   const [show, setShow] = useState<boolean>(false);
 
   const handleClose: () => void = (): void => setShow(false);
@@ -48,6 +48,7 @@ const TodaysCard = ({ id, src, title, label, ingredients, method }: RecipieTypes
         </Modal.Body>
         <Modal.Footer>
           <div className="containerPdf">
+            <div className="date">{date}</div>
             <Pdf targetRef={ref} filename="recipie.pdf">
               {({ toPdf }: any) => <button onClick={toPdf} className="generatePdf">Download PDF</button>}
             </Pdf>
