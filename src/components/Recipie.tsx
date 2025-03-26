@@ -28,13 +28,13 @@ const Recipie = ({ recipie, deleteRecipie }: RecipieProps): JSX.Element  => {
       </div>
       <div ref={ref}>
         <div className="badgeIngContainer">
-          {recipie.ingredients.map(ingredient => {
-            return <Badge variant="light" className="badgeIngredient">{ingredient}</Badge>
+          {recipie.ingredients.map((ingredient, index) => {
+            return <Badge key={index} variant="light" className="badgeIngredient">{ingredient}</Badge>
           })}
         </div>
         <div className="methodContainer">
-          {recipie.method.map(method => {
-            return <p className="method">{method}</p>
+          {recipie.method.map((method, index) => {
+            return <p key={index} className="method">{method}</p>
           })}
         </div>
       </div>

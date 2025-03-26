@@ -63,7 +63,7 @@ const Main = (): JSX.Element => {
       <Carousel className='carouselContainer'>
         {carouselDetails.map((detail) => {
           return (
-            <Carousel.Item>
+            <Carousel.Item key={detail.src}>
               <img
                 className="d-block w-100 pic"
                 src={detail.src}
@@ -79,7 +79,7 @@ const Main = (): JSX.Element => {
       <section id="recipies" className="aboutContent">
         <div className="cards">
           {recipiesDetails.map((detail) => {
-            return <RecipieCard {...detail} />
+            return <RecipieCard {...detail} key={detail.description} />
           })}
         </div>
       </section>
@@ -92,7 +92,7 @@ const Main = (): JSX.Element => {
           </div>
         </div>
         {todaysDetails.map((detail) => {
-          return <TodaysCard {...detail} ingredients={t(detail.ingredients, { returnObjects: true  })} method={t(detail.method, { returnObjects: true })}/>
+          return <TodaysCard {...detail} key={detail.id} ingredients={t(detail.ingredients, { returnObjects: true  })} method={t(detail.method, { returnObjects: true })}/>
         })}
       </section>
       <section id="addRecipie" className="addYours App">

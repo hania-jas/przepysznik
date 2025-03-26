@@ -4,8 +4,7 @@ import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { AddRecipieProps } from '../types/addRecipieProps';
 import { useTranslation } from "react-i18next";
-const dayjs = require('dayjs')
-
+import dayjs from 'dayjs';
 
 const FormComponent = ({ addRecipie } : AddRecipieProps): JSX.Element  => {
 

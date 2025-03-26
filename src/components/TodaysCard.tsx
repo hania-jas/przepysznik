@@ -38,11 +38,11 @@ const TodaysCard = ({ id, src, title, label, ingredients, method, date }: Recipi
         </Modal.Header>
         <Modal.Body ref={ref}>
         {ingredients.map(ingredient => {
-            return <Badge variant="light" className="badgeIngredient">{t(ingredient)}</Badge>
+            return <Badge key={ingredient} variant="light" className="badgeIngredient">{t(ingredient)}</Badge>
           })}
           <div className="methodContainer">
-            {method.map(method => {
-              return <p className="method">{t(method)}</p>
+            {method.map((method, index) => {
+              return <p key={index} className="method">{t(method)}</p>
             })}
           </div>
         </Modal.Body>

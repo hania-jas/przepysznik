@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.15",
@@ -13,25 +12,21 @@
     "@types/react-dom": "^17.0.0",
     "bootstrap": "^5.0.0",
     "dayjs": "^1.10.7",
-    "dom-to-pdf": "^0.2.2",
     "i18next": "^20.4.0",
-    "jspdf": "^2.3.1",
     "packages": "0.0.8",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",
     "react-i18next": "^11.11.4",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
     "react-to-pdf": "0.0.14",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +47,8 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.1.7"
+    "@types/react-router-dom": "^5.1.7",
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.2.3"
   }
 }

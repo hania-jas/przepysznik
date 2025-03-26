@@ -488,8 +488,11 @@ p {
 }
 
 .carousel-caption {
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
 .logo {

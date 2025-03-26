@@ -5,8 +5,8 @@ import { RecipiesListProps } from '../types/recipiesListProps';
 const RecipiesList = ({ recipiesList, deleteRecipie }: RecipiesListProps): JSX.Element  => {
   return (
     <div className="recipieContainer">
-      {recipiesList.map((recipie) => {
-        return <Recipie recipie={recipie} deleteRecipie={deleteRecipie} />
+      {recipiesList.map((recipie, index) => {
+        return <Recipie key={index} recipie={recipie} deleteRecipie={deleteRecipie} />
       })}
     </div>
   )
