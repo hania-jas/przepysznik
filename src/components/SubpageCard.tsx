@@ -1,18 +1,17 @@
 
 import React from 'react';
-//@ts-ignore
-import Pdf from "react-to-pdf";
+import { usePDF } from "react-to-pdf";
 import Badge from 'react-bootstrap/Badge';
 import { SubpageProps } from '../types/subPageProps';
 import { useTranslation } from "react-i18next";
 
 
 const Subpage = ({ id, title, src, ingredients, method }: SubpageProps): JSX.Element  => {
-
-  const ref: React.RefObject<HTMLInputElement> | null = React.createRef();
   const { t } = useTranslation();
-
-  console.log(ingredients);
+  const { toPDF, targetRef } = usePDF({
+    filename: "recipie.pdf",
+    page: { format: "A4" },
+  });
   
   return (
     <div className="card subCard" key={id}>
@@ -24,7 +23,7 @@ const Subpage = ({ id, title, src, ingredients, method }: SubpageProps): JSX.Ele
           <img className="recipieLabel" src={src} alt="" />
         </div>
       </section>
-      <div ref={ref} className="toPDF">
+      <div ref={targetRef} className="toPDF">
         <div className="badgePaddingContainer">
           {ingredients.map(ingredient => {
             return <Badge variant="light" className="badgeIngredient">{t(ingredient)}</Badge>
@@ -37,9 +36,7 @@ const Subpage = ({ id, title, src, ingredients, method }: SubpageProps): JSX.Ele
         </div>
       </div>
       <div className="containerPdf">
-        <Pdf targetRef={ref} filename="recipie.pdf">
-          {({ toPdf }: any) => <button onClick={toPdf} className="generatePdf">{t("subpage_card.download_button")}</button>}
-        </Pdf>
+         <button onClick={() => toPDF()} className="generatePdf">{t("subpage_card.download_button")}</button>
       </div>
     </div>
   )

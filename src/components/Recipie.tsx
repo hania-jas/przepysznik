@@ -2,15 +2,17 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
-//@ts-ignore
-import Pdf from "react-to-pdf";
+import { usePDF } from "react-to-pdf";
 import { RecipieProps } from '../types/recipieProps';
 import { useTranslation } from "react-i18next";
 
 
 const Recipie = ({ recipie, deleteRecipie }: RecipieProps): JSX.Element  => {
-  const ref: React.RefObject<HTMLInputElement> | null = React.createRef();
   const { t } = useTranslation();
+  const { toPDF, targetRef } = usePDF({
+    filename: "recipie.pdf",
+    page: { format: "A4" },
+  });
 
   return (
     <div className="card" key={recipie.id}>
@@ -26,7 +28,7 @@ const Recipie = ({ recipie, deleteRecipie }: RecipieProps): JSX.Element  => {
       <div>
         <Badge variant="info" className="badgeLabel">{t(recipie.label)}</Badge>
       </div>
-      <div ref={ref}>
+      <div ref={targetRef}>
         <div className="badgeIngContainer">
           {recipie.ingredients.map((ingredient, index) => {
             return <Badge key={index} variant="light" className="badgeIngredient">{ingredient}</Badge>
@@ -40,9 +42,7 @@ const Recipie = ({ recipie, deleteRecipie }: RecipieProps): JSX.Element  => {
       </div>
       <div className="containerPdf">
         <div className="date">{recipie.date}</div>
-        <Pdf targetRef={ref} filename="recipie.pdf">
-          {({ toPdf }: any) => <button onClick={toPdf} className="generatePdf">{t("recipie.download_button")}</button>}
-        </Pdf>
+          <button onClick={() => toPDF()} className="generatePdf">{t("recipie.download_button")}</button>
       </div>
     </div>
   )

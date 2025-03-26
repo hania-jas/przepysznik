@@ -1,22 +1,22 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Badge from 'react-bootstrap/Badge';
-//@ts-ignore
-import Pdf from "react-to-pdf";
+import { usePDF } from "react-to-pdf";
 import { RecipieTypes } from '../types/recipieTypes';
 import { useTranslation } from "react-i18next";
 
 const TodaysCard = ({ id, src, title, label, ingredients, method, date }: RecipieTypes): JSX.Element  => {
   const [show, setShow] = useState<boolean>(false);
+  const { toPDF, targetRef } = usePDF({
+    filename: "recipie.pdf",
+    page: { format: "A4" },
+  });
+  const { t } = useTranslation();
 
   const handleClose: () => void = (): void => setShow(false);
   const handleShow: () => void = (): void => setShow(true);
 
-  const ref: React.RefObject<HTMLInputElement> | null = React.createRef();
-  const { t } = useTranslation();
-
   return (
-
     <>
       <div className="todays todaysDarken" onClick={handleShow} key={id}>
         <img src={src} alt="" className="todaysPic" />
@@ -36,7 +36,7 @@ const TodaysCard = ({ id, src, title, label, ingredients, method, date }: Recipi
             </div>
           </section>
         </Modal.Header>
-        <Modal.Body ref={ref}>
+        <Modal.Body ref={targetRef}>
         {ingredients.map(ingredient => {
             return <Badge key={ingredient} variant="light" className="badgeIngredient">{t(ingredient)}</Badge>
           })}
@@ -49,9 +49,7 @@ const TodaysCard = ({ id, src, title, label, ingredients, method, date }: Recipi
         <Modal.Footer>
           <div className="containerPdf">
             <div className="date">{date}</div>
-            <Pdf targetRef={ref} filename="recipie.pdf">
-              {({ toPdf }: any) => <button onClick={toPdf} className="generatePdf">Download PDF</button>}
-            </Pdf>
+              <button onClick={() => toPDF()} className="generatePdf">Download PDF</button>
           </div>
         </Modal.Footer>
       </Modal>
